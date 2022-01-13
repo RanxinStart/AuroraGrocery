@@ -1,1 +1,4 @@
-console.log('我被执行了')
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#root')
