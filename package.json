@@ -9,6 +9,7 @@
   "author": "ranxinstart@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.1",
     "vite": "^2.7.10"
   },
   "dependencies": {
