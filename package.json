@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "便于借鉴的示例~",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ranxinstart@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^2.7.10"
+  }
+}
