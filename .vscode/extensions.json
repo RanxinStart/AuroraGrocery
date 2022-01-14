@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "johnsoncodehk.volar",
-        "ionutvmi.path-autocomplete"
+        "ionutvmi.path-autocomplete",
+        "dbaeumer.vscode-eslint"
     ]
 }
