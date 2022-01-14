@@ -9,6 +9,7 @@
   "author": "ranxinstart@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
     "@vitejs/plugin-vue": "^2.0.1",
