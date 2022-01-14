@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/markdown-it-highlightjs': ^3.3.1
   '@types/node': ^17.0.8
   '@typescript-eslint/eslint-plugin': ^5.9.1
   '@typescript-eslint/parser': ^5.9.1
@@ -8,6 +9,8 @@ specifiers:
   eslint: ^8.6.0
   eslint-plugin-vue: ^8.3.0
   github-markdown-css: ^5.1.0
+  highlight.js: ^11.4.0
+  markdown-it-highlightjs: ^3.6.0
   typescript: ^4.5.4
   vite: ^2.7.10
   vite-plugin-md: ^0.11.7
@@ -15,9 +18,11 @@ specifiers:
   vue-eslint-parser: ^8.0.1
 
 dependencies:
+  highlight.js: 11.4.0
   vue: 3.2.26
 
 devDependencies:
+  '@types/markdown-it-highlightjs': 3.3.1
   '@types/node': 17.0.8
   '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.9.1_b7b2e42b32ee097737cd3e626b10847b
   '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser/5.9.1_eslint@8.6.0+typescript@4.5.4
@@ -25,6 +30,7 @@ devDependencies:
   eslint: 8.6.0
   eslint-plugin-vue: 8.3.0_eslint@8.6.0
   github-markdown-css: 5.1.0
+  markdown-it-highlightjs: 3.6.0
   typescript: 4.5.4
   vite: 2.7.10
   vite-plugin-md: 0.11.7_vite@2.7.10
@@ -86,6 +92,13 @@ packages:
 
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha1-/SzS7bqn6qx+fzwXSLUqGRQ4Rsk=, tarball: '@types/linkify-it/download/@types/linkify-it-3.0.2.tgz'}
+    dev: true
+
+  /@types/markdown-it-highlightjs/3.3.1:
+    resolution: {integrity: sha1-HgUSEed1S6R4RJ/qf66rPRd8qJI=, tarball: '@types/markdown-it-highlightjs/download/@types/markdown-it-highlightjs-3.3.1.tgz'}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      highlight.js: 10.7.3
     dev: true
 
   /@types/markdown-it/12.2.3:
@@ -743,6 +756,14 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /highlight.js/10.7.3:
+    resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==, tarball: highlight.js/download/highlight.js-10.7.3.tgz}
+    dev: true
+
+  /highlight.js/11.4.0:
+    resolution: {integrity: sha512-nawlpCBCSASs7EdvZOYOYVkJpGmAOKMYZgZtUqSRqodZE0GRVcFKwo1RcpeOemqh9hyttTdd5wDBwHkuSyUfnA==, tarball: highlight.js/download/highlight.js-11.4.0.tgz}
+    engines: {node: '>=12.0.0'}
+
   /ignore/4.0.6:
     resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}
     engines: {node: '>= 4'}
@@ -841,6 +862,10 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
+  /lodash.flow/3.5.0:
+    resolution: {integrity: sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=, tarball: lodash.flow/download/lodash.flow-3.5.0.tgz}
+    dev: true
+
   /lodash.merge/4.6.2:
     resolution: {integrity: sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=}
     dev: true
@@ -857,6 +882,13 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
     dev: false
+
+  /markdown-it-highlightjs/3.6.0:
+    resolution: {integrity: sha512-ex+Lq3cVkprh0GpGwFyc53A/rqY6GGzopPCG1xMsf8Ya3XtGC8Uw9tChN1rWbpyDae7tBBhVHVcMM29h4Btamw==, tarball: markdown-it-highlightjs/download/markdown-it-highlightjs-3.6.0.tgz}
+    dependencies:
+      highlight.js: 11.4.0
+      lodash.flow: 3.5.0
+    dev: true
 
   /markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==, tarball: markdown-it/download/markdown-it-12.3.2.tgz}

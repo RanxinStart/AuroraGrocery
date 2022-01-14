@@ -1,5 +1,6 @@
 /* markdown 样式插件 */
 @import url(github-markdown-css);
+@import url(highlight.js/styles/github.css);
 
 .markdown-body{
     padding: 0 20px;
