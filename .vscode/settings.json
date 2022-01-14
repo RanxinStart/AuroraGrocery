@@ -1,7 +1,13 @@
-// 保存时调用 eslint|stylelint 的自动修复
 {
+    // 保存时调用 eslint|stylelint 的自动修复
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
-    }
+    },
+    // 别名自动路劲
+    "path-autocomplete.pathMappings": {
+        "@/": "${folder}/src/",
+        "#/": "${folder}/src/components/",
+        "~/": "${folder}/src/assets",
+    },
 }
