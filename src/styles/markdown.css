@@ -1,5 +1,6 @@
 /* markdown 样式插件 */
 @import url(github-markdown-css);
+/* 代码块高亮插件 */
 @import url(highlight.js/styles/github.css);
 
 .markdown-body{

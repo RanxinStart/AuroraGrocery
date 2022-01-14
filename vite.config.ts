@@ -5,6 +5,7 @@ import Markdown from 'vite-plugin-md'
 import highlight from 'markdown-it-highlightjs'
 
 export default defineConfig({
+    base:'./',
     plugins: [
         Vue({
             include: [/\.vue$/, /\.md$/],
