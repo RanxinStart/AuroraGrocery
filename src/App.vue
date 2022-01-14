@@ -4,8 +4,5 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-const version = ref('Vue3');
-const ddd = ref("dddd")
-
-const xddw = null;
+const version = ref('Vue3')
 </script>
