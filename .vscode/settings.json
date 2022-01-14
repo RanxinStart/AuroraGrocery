@@ -1,0 +1,7 @@
+// 保存时调用 eslint|stylelint 的自动修复
+{
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+    }
+}

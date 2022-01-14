@@ -1,0 +1,6 @@
+/* markdown 样式插件 */
+@import url(github-markdown-css);
+
+.markdown-body{
+    padding: 0 20px;
+}
