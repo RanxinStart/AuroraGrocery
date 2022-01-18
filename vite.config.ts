@@ -4,10 +4,10 @@ import { resolve } from 'path'
 import Markdown from 'vite-plugin-md'
 import highlight from 'markdown-it-highlightjs'
 import WindiCSS from 'vite-plugin-windicss'
-import codeCopy from 'markdown-it-code-copy'
+import codeCopy from 'markdown-it-copy'
 
 export default defineConfig({
-    base:'./',
+    base: './',
     plugins: [
         Vue({
             include: [/\.vue$/, /\.md$/],
@@ -16,7 +16,10 @@ export default defineConfig({
         Markdown({
             markdownItSetup(md) {
                 md.use(highlight, {})
-                md.use(codeCopy)
+                md.use(codeCopy, {
+                    btnText: '复制',
+                    successText:'成功~',
+                })
             },
         }),
     ],

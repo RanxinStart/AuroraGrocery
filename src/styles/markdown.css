@@ -2,7 +2,22 @@
 @import url(highlight.js/styles/github.css);
 /* markdown 样式插件 */
 @import url(github-markdown-css);
+/* 代码复制插件 */
+@import url(markdown-it-copy/theme/default.css);
 
 .markdown-body{
     padding: 0 20px;
+}
+
+.m-mdic-copy-wrapper{
+    user-select: none;
+}
+
+.m-mdic-copy-wrapper button.u-mdic-copy-btn{
+    padding: 0;
+    top: -1px;
+}
+.m-mdic-copy-wrapper div.u-mdic-copy-notify{
+    padding: 0;
+    margin-right: 3px;
 }
