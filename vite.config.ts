@@ -5,12 +5,25 @@ import Markdown from 'vite-plugin-md'
 import highlight from 'markdown-it-highlightjs'
 import WindiCSS from 'vite-plugin-windicss'
 import codeCopy from 'markdown-it-copy'
+import Icon from 'unplugin-icons/vite'
+import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
     base: './',
+    css: {
+        postcss: {
+            plugins: [
+                autoprefixer(),
+            ],
+        },
+    },
     plugins: [
         Vue({
             include: [/\.vue$/, /\.md$/],
+        }),
+        Icon({
+            compiler: 'vue3',
+            autoInstall: true,
         }),
         WindiCSS(),
         Markdown({
@@ -18,7 +31,7 @@ export default defineConfig({
                 md.use(highlight, {})
                 md.use(codeCopy, {
                     btnText: '复制',
-                    successText:'成功~',
+                    successText: '成功~',
                 })
             },
         }),
