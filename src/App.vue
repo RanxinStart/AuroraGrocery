@@ -1,6 +1,12 @@
 <template>
   <App />
-  <div>我正在使用{{ version }}</div>
+  <div
+    :class="[
+      'italic', 'text-3xl', 'text-stroke-sm', 'text-stroke-sky-400'
+    ]"
+  >
+    我正在使用{{ version }}
+  </div>
 </template>
 
 <script lang="ts" setup>
