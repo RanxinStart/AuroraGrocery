@@ -2,6 +2,7 @@
     "recommendations": [
         "johnsoncodehk.volar",
         "ionutvmi.path-autocomplete",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "voorjaar.windicss-intellisense"
     ]
 }
