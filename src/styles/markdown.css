@@ -21,3 +21,6 @@
     padding: 0;
     margin-right: 3px;
 }
+.m-mdic-copy-wrapper button.u-mdic-copy-btn:hover{
+    opacity: .7;
+}

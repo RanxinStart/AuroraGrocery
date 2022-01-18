@@ -2,7 +2,7 @@
   <App />
   <div
     :class="[
-      'italic', 'text-3xl', 'text-stroke-sm', 'text-stroke-sky-400'
+      'italic', 'text-3xl', 'text-stroke-sm', 'text-stroke-sky-400', 'text-sky-800'
     ]"
   >
     我正在使用{{ version }}
