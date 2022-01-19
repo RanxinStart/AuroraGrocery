@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import '@/styles/index'
-import { install } from './plugin'
+import { install } from './plugins'
 
 // 创建vue
 const vueApp = createApp(App)
