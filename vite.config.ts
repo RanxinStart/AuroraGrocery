@@ -7,6 +7,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import codeCopy from 'markdown-it-copy'
 import Icon from 'unplugin-icons/vite'
 import autoprefixer from 'autoprefixer'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 export default defineConfig({
     base: './',
@@ -24,6 +25,9 @@ export default defineConfig({
         Icon({
             compiler: 'vue3',
             autoInstall: true,
+        }),
+        VueI18n({
+            include: resolve(__dirname, './src/locales/**'),
         }),
         WindiCSS(),
         Markdown({
