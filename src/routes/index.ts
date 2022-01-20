@@ -9,7 +9,7 @@ export const routes: RouteRecordRaw[] = [
         path: '/home',
         name: 'home',
         meta: {
-            title: 'dada',
+            title: '首页',
         },
         component: import('@/views/index.vue'),
     },

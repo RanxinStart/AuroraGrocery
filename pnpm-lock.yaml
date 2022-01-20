@@ -9,6 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.9.1
   '@vitejs/plugin-vue': ^2.0.1
   '@vue/compiler-sfc': ^3.2.27
+  '@vue/composition-api': ^1.4.4
   autoprefixer: ^10.4.2
   eslint: ^8.6.0
   eslint-plugin-vue: ^8.3.0
@@ -24,15 +25,18 @@ specifiers:
   vite-plugin-md: ^0.11.7
   vite-plugin-windicss: ^1.6.3
   vue: ^3.2.26
+  vue-composable: ^1.0.0-beta.24
   vue-eslint-parser: ^8.0.1
   vue-i18n: ^9.2.0-beta.26
   vue-router: '4'
   windicss: ^3.4.3
 
 dependencies:
+  '@vue/composition-api': 1.4.4_vue@3.2.27
   highlight.js: 11.4.0
   lodash: 4.17.21
   vue: 3.2.27
+  vue-composable: 1.0.0-beta.24
   vue-router: 4.0.12_vue@3.2.27
   windicss: 3.4.3
 
@@ -455,6 +459,15 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.27
       '@vue/shared': 3.2.27
+
+  /@vue/composition-api/1.4.4_vue@3.2.27:
+    resolution: {integrity: sha512-0AMpkSy28NG1BUqTPXLfQzJUnjSp+qUa4jaG7A2FBRSKHJOl1g10/xvNb44+OW5Jg9f79zKOb7PYhFhJG2vLyQ==, tarball: '@vue/composition-api/download/@vue/composition-api-1.4.4.tgz'}
+    peerDependencies:
+      vue: '>= 2.5 < 3'
+    dependencies:
+      tslib: 2.3.1
+      vue: 3.2.27
+    dev: false
 
   /@vue/devtools-api/6.0.0-beta.21.1:
     resolution: {integrity: sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==, tarball: '@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.21.1.tgz'}
@@ -1763,6 +1776,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, tarball: tslib/download/tslib-1.14.1.tgz}
     dev: true
 
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==, tarball: tslib/download/tslib-2.3.1.tgz}
+    dev: false
+
   /tsutils/3.21.0_typescript@4.5.4:
     resolution: {integrity: sha1-tIcX05TOpsHglpg+7Vjp1hcVtiM=, tarball: tsutils/download/tsutils-3.21.0.tgz?cache=0&sync_timestamp=1633171069163&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftsutils%2Fdownload%2Ftsutils-3.21.0.tgz}
     engines: {node: '>= 6'}
@@ -1905,6 +1922,14 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /vue-composable/1.0.0-beta.24:
+    resolution: {integrity: sha1-BAMhY/uQrftMHw9dli+bygA5g0E=, tarball: vue-composable/download/vue-composable-1.0.0-beta.24.tgz}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.21.1
+    dev: false
 
   /vue-eslint-parser/8.0.1_eslint@8.7.0:
     resolution: {integrity: sha1-JeCLIKQUVRUx8+GfmZkC4ez0XxM=, tarball: vue-eslint-parser/download/vue-eslint-parser-8.0.1.tgz}
