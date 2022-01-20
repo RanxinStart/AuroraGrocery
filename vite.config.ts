@@ -46,5 +46,6 @@ export default defineConfig({
             '#': resolve(__dirname, 'src/components'),
             '~': resolve(__dirname, 'src/assets'),
         },
+        extensions:['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json','.vue'],
     },
 })

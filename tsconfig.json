@@ -22,10 +22,26 @@
     // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
     /* Modules */
     "module": "esnext", /* Specify what module code is generated. */
-    "rootDir": "./", /* Specify the root folder within your source files. */
+    "rootDir": ".", /* Specify the root folder within your source files. */
     "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
-    "baseUrl": "./", /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    "baseUrl": ".", /* Specify the base directory to resolve non-relative module names. */
+    "paths": {
+      "@/*": [
+        "src/*.vue",
+        "src/*/index.vue",
+        "src/*",
+      ],
+      "#/*": [
+        "src/components/*.vue",
+        "src/components/*/index.vue",
+        "src/components/*",
+      ],
+      "~/*": [
+        "src/assets/*.vue",
+        "src/assets/*/index.vue",
+        "src/assets/*",
+      ],
+    }, /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
     /* Specify type package names to be included without being referenced in a source file. */
