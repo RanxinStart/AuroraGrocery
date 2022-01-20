@@ -4,9 +4,9 @@ import type { App, Plugin } from 'vue'
 const pluginList = import.meta.globEager('./*.ts')
 
 // 安装程序
-export const install = (vueApp: App) => {
+export const install = (app: App) => {
     for (const plugin of Object.values(pluginList)) {
-        vueApp.use(<Plugin>plugin.default)
+        app.use(<Plugin>plugin.default)
     }
 }
 export default install

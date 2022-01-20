@@ -18,6 +18,7 @@ specifiers:
   lodash: ^4.17.21
   markdown-it-copy: ^1.2.0
   markdown-it-highlightjs: ^3.6.0
+  pinia: ^2.0.9
   postcss: ^8.4.5
   typescript: ^4.5.4
   unplugin-icons: ^0.13.0
@@ -35,6 +36,7 @@ dependencies:
   '@vue/composition-api': 1.4.4_vue@3.2.27
   highlight.js: 11.4.0
   lodash: 4.17.21
+  pinia: 2.0.9_7316823cae56fc08f3f178ee515a4286
   vue: 3.2.27
   vue-composable: 1.0.0-beta.24
   vue-router: 4.0.12_vue@3.2.27
@@ -1599,6 +1601,25 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pinia/2.0.9_7316823cae56fc08f3f178ee515a4286:
+    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==, tarball: pinia/download/pinia-2.0.9.tgz}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.4_vue@3.2.27
+      '@vue/devtools-api': 6.0.0-beta.21.1
+      typescript: 4.5.4
+      vue: 3.2.27
+      vue-demi: 0.12.1_52e5e7a3ac268922612599c493fedef7
+    dev: false
+
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==, tarball: postcss-value-parser/download/postcss-value-parser-4.2.0.tgz}
     dev: true
@@ -1929,6 +1950,22 @@ packages:
     requiresBuild: true
     dependencies:
       '@vue/devtools-api': 6.0.0-beta.21.1
+    dev: false
+
+  /vue-demi/0.12.1_52e5e7a3ac268922612599c493fedef7:
+    resolution: {integrity: sha1-9+GO++z/0RqwadFHLXoG4xm0F0w=, tarball: vue-demi/download/vue-demi-0.12.1.tgz}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.4.4_vue@3.2.27
+      vue: 3.2.27
     dev: false
 
   /vue-eslint-parser/8.0.1_eslint@8.7.0:

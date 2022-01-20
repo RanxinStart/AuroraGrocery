@@ -12,5 +12,4 @@ export default router
 /* router hook */
 router.beforeEach((to) => {
     useTitle(<string>to.meta.title)
-    console.log(import.meta.env)
 })

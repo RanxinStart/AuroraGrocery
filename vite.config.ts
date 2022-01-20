@@ -12,6 +12,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 export default defineConfig({
     base: './',
     envDir: resolve(__dirname,'config/envs'),
+    envPrefix: 'VITE_',
     define:{
         'process.env': {},
         // 'process.env': process.env,

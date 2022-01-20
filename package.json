@@ -36,6 +36,7 @@
     "@vue/composition-api": "^1.4.4",
     "highlight.js": "^11.4.0",
     "lodash": "^4.17.21",
+    "pinia": "^2.0.9",
     "vue": "^3.2.26",
     "vue-composable": "^1.0.0-beta.24",
     "vue-router": "4",
