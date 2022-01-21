@@ -1,4 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { auth } from './auth'
 
 export const routes: RouteRecordRaw[] = [
     {
@@ -13,4 +14,5 @@ export const routes: RouteRecordRaw[] = [
         },
         component: import('@/views/index.vue'),
     },
+    auth,
 ]
