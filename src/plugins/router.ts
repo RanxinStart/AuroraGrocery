@@ -10,6 +10,6 @@ export const router = createRouter({
 export default router
 
 /* router hook */
-router.beforeEach((to) => {
+router.afterEach((to) => {
     useTitle(<string>to.meta.title)
 })

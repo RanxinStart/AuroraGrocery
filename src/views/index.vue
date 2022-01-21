@@ -12,8 +12,12 @@
     <camera />
     <camera />
   </div>
-  <div class="title active">
+  <div
+    class="title active"
+    @click="store.count++"
+  >
     {{ t('hello') }}
+    {{ store.count }}
   </div>
 </template>
 
@@ -23,6 +27,9 @@ import { ref } from 'vue'
 import mdModule from '@/mdModule.md'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+import { useStore } from '@/stores/user'
+const store = useStore()
+store.setCount(50)
 
 const version = ref('Vue3')
 </script>
