@@ -32,15 +32,16 @@
     "vue-eslint-parser": "^8.0.1"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "highlight.js": "^11.4.0",
     "lodash": "^4.17.21",
     "naive-ui": "^2.24.1",
     "pinia": "^2.0.9",
     "vue": "^3.2.26",
     "vue-composable": "^1.0.0-beta.24",
+    "vue-i18n": "^9.2.0-beta.26",
     "vue-router": "^4.0.12",
-    "windicss": "^3.4.3",
-    "vue-i18n": "^9.2.0-beta.26"
+    "windicss": "^3.4.3"
   },
   "windicss": "*"
 }
