@@ -1,20 +1,30 @@
 <template>
   <div class="login-container">
-    <section class="current-time">
-      <div class="text-7xl mb-10">
-        {{ currentTime[2] }}
+    <section class="absolute inset-y-0 left-1/20 flex">
+      <div class="flex flex-col justify-center transform rotate-45">
+        <div class="transform rotate-12 text-center mb-32">
+          就一句话!,----？
+        </div>
+        <div class="text-7xl mb-10">
+          {{ currentTime[2] }}
+        </div>
+        <div class="flex text-4xl transform rotate-12">
+          <div>{{ currentTime[0] }}</div>
+          <div>，</div>
+          <div>{{ currentTime[1] }}</div>
+        </div>
       </div>
-      <div class="flex text-4xl">
-        <div>{{ currentTime[0] }}</div>
-        <div>，</div>
-        <div>{{ currentTime[1] }}</div>
+      <div class="grid h-80 gap-10">
+        <n-input placeholder="hh" />
+        <n-input />
       </div>
     </section>
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted,onUnmounted,ref } from 'vue'
-import { useDateNow, useNow } from 'vue-composable'
+import { NInput } from 'naive-ui'
+import { onUnmounted,ref } from 'vue'
+import { useNow } from 'vue-composable'
 import dayjs from 'dayjs'
 const currentTime = ref<string[]>([])
 const { remove } = useNow({
@@ -30,11 +40,7 @@ onUnmounted(remove)
 .login-container {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
-.current-time {
-  position: fixed;
-  left: 5%;
-  bottom: 5%;
-}
 </style>
