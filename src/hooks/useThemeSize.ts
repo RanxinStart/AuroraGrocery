@@ -2,6 +2,7 @@
 type appName = 'app' | 'application'
 const application = [36, 40, 54, 68]
 
+
 const ThemeNameMap = new Map([
     ['app', application],
     ['application', application],
