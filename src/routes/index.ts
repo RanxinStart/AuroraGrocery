@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { auth } from './auth'
 import { home } from './home'
+import { system } from './system'
 
 export const routes: RouteRecordRaw[] = [
     {
@@ -9,4 +10,5 @@ export const routes: RouteRecordRaw[] = [
     },
     auth,
     home,
+    system,
 ]
