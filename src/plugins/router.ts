@@ -13,3 +13,10 @@ export default router
 router.afterEach((to) => {
     useTitle(<string>to.meta.title)
 })
+
+router.beforeEach((to) => {
+    if (/\/application/.test(to.path) && !router.hasRoute(to.name || '')) {
+        router.replace('home')
+        return false
+    }
+})

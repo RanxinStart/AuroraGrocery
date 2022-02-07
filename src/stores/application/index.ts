@@ -1,16 +1,42 @@
 import { defineStore } from 'pinia'
-import { actions } from './actions'
+import { defineAsyncComponent } from 'vue'
+import router from '@/plugins/router'
 
 export const useStore = defineStore('user', {
     state() {
         return {
-            appList:[],
+            appList: [{
+                icon: () => import('~icons/ic/round-settings'),
+                name: 'system.setting',
+                title: '系统设置',
+                component: () => import('@/views/system/setting/index.vue'),
+            }],
         }
     },
     getters: {
-        userName(state: any) {
-            return state.name || '默认名称'
+        appNameList() {
+            const appNameList: string[] = this.appList.map((i) => i.name)
+            return appNameList
         },
     },
-    actions,
+    actions: {
+        getAppInfo(name: string) {
+            const target = this.appList.find((i) => i.name === name) || this.appList[0]
+            return {
+                ...target,
+                vueIcon: defineAsyncComponent(target.icon),
+                vueComponent: defineAsyncComponent(target.component),
+            }
+        },
+        openApp(name: string) {
+            const app = this.getAppInfo(name)
+            router.addRoute('application', {
+                name: app.name,
+                path: app.name,
+                component: app.component,
+                meta: { title: app.title },
+            })
+            router.push(`/application/${app.name}`)
+        },
+    },
 })

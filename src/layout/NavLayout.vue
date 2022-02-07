@@ -3,11 +3,16 @@
     v-outside="() => openMenu = false"
     class="menu"
     :class="[openMenu ? 'on' : 'off']"
-    @click="openMenu = true"
+    @click="openMenu || (openMenu = true)"
   >
     <IconButton v-show="!openMenu" />
     <section v-show="openMenu">
-      <ApplicationCard />
+      <ApplicationCard
+        v-for="i in appNameList"
+        :key="i"
+        :name="i"
+        @click.stop="openMenu = false,openApp(i)"
+      />
     </section>
   </section>
   <router-view />
@@ -15,10 +20,12 @@
 <script lang="ts">
 import IconButton from '~icons/bytesize/chevron-bottom'
 import ApplicationCard from '#/ApplicationCard'
+import { useStore } from '@/stores/application/index'
 </script>
 <script setup lang="ts">
 import { ref } from 'vue'
 const openMenu = ref(false)
+const { appNameList,openApp } = useStore()
 </script>
 <style scoped>
 .menu {

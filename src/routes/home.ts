@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import NavLayout from '@/layout/NavLayout.vue'
 
 export const home: RouteRecordRaw = {
+    name: 'home',
     path: '/home',
     component: NavLayout,
     children: [

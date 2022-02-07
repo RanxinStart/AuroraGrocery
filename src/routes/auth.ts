@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import LoginLayout from '@/layout/LoginLayout.vue'
 
 export const auth: RouteRecordRaw = {
+    name: 'auth',
     path: '/auth',
     redirect: '/auth/login',
     component: LoginLayout,
