@@ -28,9 +28,10 @@ const { appNameList,openApp } = useStore()
 </script>
 <style scoped>
 .menu {
-  @apply fixed inset-x-0 transition-all m-auto shadow flex gap-10 bg-white bg-opacity-10;
+  @apply fixed inset-x-0 transition-all m-auto shadow flex gap-10 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm;
   &.off {
-    @apply w-28 h-22 justify-center rounded-b-md hover:bg-gray-50 cursor-pointer top-0;
+    @apply w-28 h-22 justify-center rounded-b-md cursor-pointer top-0;
+    /* hover:bg-gray-50 */
   }
   &.on {
     @apply w-4/5 p-10 justify-center rounded-md top-20;
