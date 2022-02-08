@@ -6,14 +6,13 @@
     @click="openMenu || (openMenu = true)"
   >
     <IconButton v-show="!openMenu" />
-    <section v-show="openMenu">
-      <ApplicationCard
-        v-for="i in appNameList"
-        :key="i"
-        :name="i"
-        @click.stop="openMenu = false,openApp(i)"
-      />
-    </section>
+    <ApplicationCard
+      v-for="i in appNameList"
+      v-show="openMenu"
+      :key="i"
+      :name="i"
+      @click.stop="openMenu = false,openApp(i)"
+    />
   </section>
   <router-view />
 </template>
@@ -29,7 +28,7 @@ const { appNameList,openApp } = useStore()
 </script>
 <style scoped>
 .menu {
-  @apply fixed inset-x-0 transition-all m-auto shadow flex;
+  @apply fixed inset-x-0 transition-all m-auto shadow flex gap-10 bg-white bg-opacity-10;
   &.off {
     @apply w-28 h-22 justify-center rounded-b-md hover:bg-gray-50 cursor-pointer top-0;
   }

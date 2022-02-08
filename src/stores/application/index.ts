@@ -5,11 +5,25 @@ import router from '@/plugins/router'
 export const useStore = defineStore('user', {
     state() {
         return {
-            appList: [{
-                icon: () => import('~icons/ic/round-settings'),
-                name: 'system.setting',
-                title: '系统设置',
-                component: () => import('@/views/system/setting/index.vue'),
+            appList: [
+                {
+                    icon: () => import('~icons/ic/round-settings'),
+                    name: 'system.setting',
+                    title: '系统设置',
+                    component: () => import('@/views/system/setting/index.vue'),
+                },
+                {
+                    icon:()=> import('~icons/ic/round-color-lens'),
+                    name: 'native.color',
+                    titie:'颜色控件',
+                    component: () => import('@/views/app/nativeColor/index.vue'),
+                },
+            ],
+            appShop:[{
+                icon:()=> import('~icons/ic/round-color-lens'),
+                name: 'native.color',
+                titie:'颜色控件',
+                component: () => import('@/views/app/nativeColor/index.vue'),
             }],
         }
     },
