@@ -1,12 +1,13 @@
 import type { RouteRecordRaw } from 'vue-router'
-import EmptyLayout from '@/layout/EmptyLayout.vue'
+import NavLayout from '@/layout/NavLayout.vue'
 
 export const system: RouteRecordRaw = {
     path: '/system',
     redirect: '/system/setting',
-    component: EmptyLayout,
+    component: NavLayout,
     children: [
         {
+            name: 'system.setting',
             path: 'setting',
             meta: { title: '设置' },
             component: () => import('@/views/system/setting/index.vue'),

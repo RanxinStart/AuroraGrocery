@@ -7,22 +7,30 @@ export const useStore = defineStore('user', {
         return {
             appList: [
                 {
+                    icon: () => import('~icons/ion/home-sharp'),
+                    name: 'home',
+                    titie: '首页',
+                    system: true,
+                    component: () => import('@/views/home/index.vue'),
+                },
+                {
                     icon: () => import('~icons/ic/round-settings'),
                     name: 'system.setting',
                     title: '系统设置',
+                    system: true,
                     component: () => import('@/views/system/setting/index.vue'),
                 },
                 {
-                    icon:()=> import('~icons/ic/round-color-lens'),
+                    icon: () => import('~icons/ic/round-color-lens'),
                     name: 'native.color',
-                    titie:'颜色控件',
+                    titie: '颜色控件',
                     component: () => import('@/views/app/nativeColor/index.vue'),
                 },
             ],
-            appShop:[{
-                icon:()=> import('~icons/ic/round-color-lens'),
+            appShop: [{
+                icon: () => import('~icons/ic/round-color-lens'),
                 name: 'native.color',
-                titie:'颜色控件',
+                titie: '颜色控件',
                 component: () => import('@/views/app/nativeColor/index.vue'),
             }],
         }
@@ -44,13 +52,17 @@ export const useStore = defineStore('user', {
         },
         openApp(name: string) {
             const app = this.getAppInfo(name)
-            router.addRoute('application', {
-                name: app.name,
-                path: app.name,
-                component: app.component,
-                meta: { title: app.title },
-            })
-            router.push(`/application/${app.name}`)
+            if (!app.system) {
+                router.addRoute('application', {
+                    name: app.name,
+                    path: app.name,
+                    component: app.component,
+                    meta: { title: app.title },
+                })
+                router.push(`/application/${app.name}`)
+            } else {
+                router.push({ name: app.name })
+            }
         },
     },
 })

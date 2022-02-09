@@ -16,7 +16,7 @@ router.afterEach((to) => {
 
 router.beforeEach((to) => {
     if (/\/application/.test(to.path) && !router.hasRoute(to.name || '')) {
-        router.replace('home')
+        router.replace({ name: 'home' })
         return false
     }
 })
