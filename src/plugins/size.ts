@@ -15,6 +15,11 @@ export const createSize = (option:createSizeOption = {}) => {
                     el.style.width = `${option.value}${unit}`
                     el.style.height = `${option.value}${unit}`
                 },
+                updated(el,option){
+                    const unit = option.arg || defaultUnit
+                    el.style.width = `${option.value}${unit}`
+                    el.style.height = `${option.value}${unit}`
+                },
             })
         },
     }

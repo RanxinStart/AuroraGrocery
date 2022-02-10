@@ -7,23 +7,25 @@
     ]"
   >
     <slot />
-    <vueIcon
-      :style="{ fontSize: `${size / 1.5}px` }"
-    />
+    <vueIcon :style="{ fontSize: `${size / 1.5}px` }" />
   </section>
 </template>
 <script lang="ts" setup>
 import useThemeSize from '@/hooks/useThemeSize'
-import { useStore } from '@/stores/application/index'
-import { defineProps } from 'vue'
+import { useSettingStore } from '@/stores/setting'
+import { useAppStore } from '@/stores/application'
+import { computed, defineProps } from 'vue'
 
 interface IProps {
   name: string
 }
 const props = defineProps<IProps>()
 
-const { size = NaN } = useThemeSize('app', 'default')
+const store = useSettingStore()
+const size = computed(() => {
+    return useThemeSize('app', store.size) || NaN
+})
 
-const { getAppInfo } = useStore()
+const { getAppInfo } = useAppStore()
 const { vueIcon } = getAppInfo(props.name)
 </script>

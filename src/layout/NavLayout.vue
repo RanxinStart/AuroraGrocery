@@ -19,16 +19,16 @@
 <script lang="ts">
 import IconButton from '~icons/bytesize/chevron-bottom'
 import ApplicationCard from '#/ApplicationCard'
-import { useStore } from '@/stores/application/index'
+import { useAppStore } from '@/stores/application/index'
 </script>
 <script setup lang="ts">
 import { ref } from 'vue'
 const openMenu = ref(false)
-const { appNameList,openApp } = useStore()
+const { appNameList,openApp } = useAppStore()
 </script>
 <style scoped>
 .menu {
-  @apply fixed inset-x-0 transition-all m-auto shadow flex gap-10 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm;
+  @apply fixed inset-x-0 transition-all m-auto shadow flex gap-10 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm z-99;
   &.off {
     @apply w-28 h-22 justify-center rounded-b-md cursor-pointer top-0;
     /* hover:bg-gray-50 */

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { actions } from './actions'
 
-export const useStore = defineStore('user', {
+export const useUserStore = defineStore('user', {
     state() {
         return {
             name: undefined,

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { defineAsyncComponent } from 'vue'
 import router from '@/plugins/router'
 
-export const useStore = defineStore('user', {
+export const useAppStore = defineStore('user', {
     state() {
         return {
             appList: [
