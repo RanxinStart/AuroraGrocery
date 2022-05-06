@@ -23,15 +23,16 @@
 </template>
 <script lang="ts" setup>
 import { NInput } from 'naive-ui'
-import { onUnmounted,ref } from 'vue'
+import { onUnmounted, ref } from 'vue'
 import { useNow } from 'vue-composable'
 import dayjs from 'dayjs'
 const currentTime = ref<string[]>([])
 const { remove } = useNow({
-    timeFn(){
+    timeFn() {
         currentTime.value = dayjs().format('YYYY/MM/DD|dddd|HH:mm:ss').split('|')
         return 0
     },
+    sync: true,
 })
 onUnmounted(remove)
 </script>
@@ -42,5 +43,4 @@ onUnmounted(remove)
   height: 100vh;
   position: relative;
 }
-
 </style>
