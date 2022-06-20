@@ -1,8 +1,11 @@
 <template>
   <section class="home-desktop">
+    <div class="h-100" />
     home
   </section>
 </template>
+
+<script lang="ts" setup></script>
 
 <style>
 .home-desktop{
