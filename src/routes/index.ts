@@ -5,12 +5,12 @@ import { system } from './system'
 import { application } from './application'
 
 export const routes: RouteRecordRaw[] = [
-    {
-        path: '/',
-        redirect: '/home',
-    },
-    auth,
-    home,
-    system,
-    application,
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  auth,
+  home,
+  system,
+  application
 ]

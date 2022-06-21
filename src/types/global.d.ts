@@ -1,3 +1,9 @@
-interface Window {
-    EyeDropper: undefined | Class
+interface EyeDropper {
+  new():{
+    open:() => Promise<{sRGBHex:string}>
+  }
 }
+interface Window {
+  EyeDropper: undefined | EyeDropper
+}
+

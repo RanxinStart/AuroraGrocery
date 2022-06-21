@@ -1,35 +1,24 @@
-/* eslint-disable no-undef */
 {
+    "root": true,
     "env": {
-        "browser": true,
-        "es2021": true
+        "node": true,
+        "vue/setup-compiler-macros": true
     },
     "extends": [
-        "eslint:recommended",
         "plugin:vue/vue3-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "eslint:recommended",
+        "@vue/eslint-config-typescript/recommended",
+        "@vue/eslint-config-prettier",
+        "plugin:prettier/recommended"
     ],
     "plugins": [
-        "vue",
-        "@typescript-eslint"
+        "prettier"
     ],
-    "parser": "vue-eslint-parser",
     "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "ecmaVersion": "latest",
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
+        "ecmaVersion": "latest"
     },
     "rules": {
-        "indent": [2 ,4],
-        "eqeqeq": [2, "always"],
-        "semi": [2, "never"],
-        "quotes": [2, "single"],
-        "comma-dangle": [1, "always-multiline"],
-        "vue/multi-word-component-names": [1, {
-            "ignores": ["index"]
-        }]
+        "prettier/prettier": "warn",
+        "vue/multi-word-component-names": 0
     }
 }

@@ -5,6 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import EmptyLayout from '@/layout/EmptyLayout'
-import { NMessageProvider } from 'naive-ui'
+  import EmptyLayout from '@/layout/EmptyLayout'
+  import { NMessageProvider } from 'naive-ui'
 </script>

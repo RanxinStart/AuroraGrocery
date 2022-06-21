@@ -5,7 +5,7 @@ import 'dayjs/locale/zh-cn'
 dayjs.locale('zh-cn')
 
 export const i18n = createI18n({
-    locale: 'zh_CN',
-    messages,
+  locale: 'zh_CN',
+  messages
 })
 export default i18n

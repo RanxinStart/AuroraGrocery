@@ -1,6 +1,6 @@
 {
     "recommendations": [
-        "johnsoncodehk.volar",
+        "vue.volar",
         "ionutvmi.path-autocomplete",
         "dbaeumer.vscode-eslint",
         "voorjaar.windicss-intellisense"

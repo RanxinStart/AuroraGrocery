@@ -5,8 +5,8 @@ const pluginList = import.meta.globEager('./*.ts')
 
 // 安装程序
 export const install = (app: App) => {
-    for (const plugin of Object.values(pluginList)) {
-        app.use(<Plugin>plugin.default)
-    }
+  for (const plugin of Object.values(pluginList)) {
+    app.use(<Plugin>plugin.default)
+  }
 }
 export default install
