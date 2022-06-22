@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
-import { useSessionStorage } from 'vue-composable'
+import { useLocalStorage } from 'vue-composable'
 
-const { storage } = useSessionStorage('store__setting', {
-  size: 'sm'
+export const { storage } = useLocalStorage('store__setting', {
+  size: 'sm',
+  lang: 'zh_CN'
 })
 
 export const useSettingStore = defineStore('setting', {
@@ -12,6 +13,9 @@ export const useSettingStore = defineStore('setting', {
   actions: {
     updateSize(value: ThememSize) {
       this.size = value
+    },
+    updateLang(value:string){
+      this.lang = value
     }
   }
 })

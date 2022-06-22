@@ -9,5 +9,6 @@ const vueApp = createApp(App)
 // 安装插件
 install(vueApp)
 
+
 // 挂载
 vueApp.mount('#root')

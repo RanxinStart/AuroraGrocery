@@ -1,4 +1,6 @@
 {
-    "language": "language",
-    "hello": "hello"
+  "语言": "language",
+  "你好": "hello",
+  "尺寸": "size",
+  "图标":"icon"
 }
