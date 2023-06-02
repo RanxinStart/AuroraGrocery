@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import NavLayout from '@/layout/NavLayout.vue'
+import { routes } from '.'
 
 export const home: RouteRecordRaw = {
   path: '/home',
@@ -13,3 +14,5 @@ export const home: RouteRecordRaw = {
     }
   ]
 }
+
+routes.push(home)

@@ -1,16 +1,8 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { auth } from './auth'
-import { home } from './home'
-import { system } from './system'
-import { application } from './application'
+import './redirect'
+import './auth'
+import './home'
+import './system'
+import './application'
 
-export const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    redirect: '/home'
-  },
-  auth,
-  home,
-  system,
-  application
-]
+export const routes: RouteRecordRaw[] = []

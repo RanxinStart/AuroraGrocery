@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import NavLayout from '@/layout/NavLayout.vue'
+import { routes } from '.'
 
 export const application: RouteRecordRaw = {
   name: 'application',
@@ -8,3 +9,5 @@ export const application: RouteRecordRaw = {
   component: NavLayout,
   children: []
 }
+
+routes.push(application)

@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import LoginLayout from '@/layout/LoginLayout.vue'
+import { routes } from '.'
 
 export const auth: RouteRecordRaw = {
   name: 'auth',
@@ -14,3 +15,5 @@ export const auth: RouteRecordRaw = {
     }
   ]
 }
+
+routes.push(auth)
