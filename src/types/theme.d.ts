@@ -1,1 +1,1 @@
-type ThememSize = 'sm' | 'md' | 'lg' | 'xl' | 'default'
+type ThemeSize = 'sm' | 'md' | 'lg' | 'xl' | 'default'

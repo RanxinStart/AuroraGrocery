@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { useTitle } from 'vue-composable'
+import { useTitle } from '@vueuse/core'
 import { routes } from '@/routes'
 
 export const router = createRouter({

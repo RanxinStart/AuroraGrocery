@@ -1,20 +1,20 @@
 import type { Plugin } from 'vue'
-import { useEvent } from 'vue-composable'
-import type { RemoveEventFunction } from 'vue-composable'
 
 export const createOutsideOn = () => {
-  let eventRemove: RemoveEventFunction | null
+  let eventFn: (this: Document, ev: DocumentEventMap[keyof DocumentEventMap]) => void
+  let behavior: keyof DocumentEventMap
   const plugin: Plugin = {
     install(app) {
       app.directive('outside', {
         created(el: Element, option) {
-          const behavior = <keyof DocumentEventMap>option.arg || 'click'
-          eventRemove = useEvent(document, behavior, ({ target }) => {
+          behavior = <keyof DocumentEventMap>option.arg || 'click'
+          eventFn = function ({ target }) {
             el.contains(<Node>target) || option.value()
-          })
+          }
+          document.addEventListener(behavior, eventFn)
         },
         unmounted() {
-          eventRemove?.()
+          document.removeEventListener(behavior, eventFn)
         }
       })
     }
