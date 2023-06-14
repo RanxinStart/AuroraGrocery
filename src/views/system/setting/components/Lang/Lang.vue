@@ -1,13 +1,3 @@
-<template>
-  <NForm>
-    <NCard>
-      <NDivider>
-        <Language>语言</Language>
-      </NDivider>
-      <NSelect :value="locale" :options="selectList" :on-update:value="change" />
-    </NCard>
-  </NForm>
-</template>
 <script lang="ts" setup>
   import { computed } from 'vue'
   import { NCard, NDivider, NForm, NSelect } from 'naive-ui'
@@ -35,3 +25,13 @@
 
   const { updateLang } = useSettingStore()
 </script>
+<template>
+  <NForm>
+    <NCard>
+      <NDivider>
+        <Language>语言</Language>
+      </NDivider>
+      <NSelect :value="locale" :options="selectList" :on-update:value="change" />
+    </NCard>
+  </NForm>
+</template>

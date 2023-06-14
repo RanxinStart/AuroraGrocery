@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+  import { NInput } from 'naive-ui'
+  import { ref } from 'vue'
+  import { useIntervalFn } from '@vueuse/core'
+  import dayjs from 'dayjs'
+  const currentTime = ref<string[]>([])
+  useIntervalFn(() => {
+    currentTime.value = dayjs().format('YYYY/MM/DD|dddd|HH:mm:ss').split('|')
+    return 0
+  }, 1000)
+</script>
 <template>
   <div class="login-container">
     <section class="absolute inset-y-0 left-1/20 flex">
@@ -19,18 +30,6 @@
     </section>
   </div>
 </template>
-<script lang="ts" setup>
-  import { NInput } from 'naive-ui'
-  import { ref } from 'vue'
-  import { useIntervalFn } from '@vueuse/core'
-  import dayjs from 'dayjs'
-  const currentTime = ref<string[]>([])
-  useIntervalFn(() => {
-    currentTime.value = dayjs().format('YYYY/MM/DD|dddd|HH:mm:ss').split('|')
-    return 0
-  }, 1000)
-</script>
-
 <style scoped>
   .login-container {
     width: 100vw;

@@ -1,3 +1,22 @@
+<script lang="ts" setup>
+  import { ref } from 'vue'
+  import colorPicker from '~icons/gg/color-picker'
+  import { useMessage } from 'naive-ui'
+  const colorValue = ref('#66ccff')
+  const message = useMessage()
+
+  const openEyeDropper = async () => {
+    if (window.EyeDropper) {
+      const { EyeDropper } = window
+      const eyeDropper = new EyeDropper()
+
+      const { sRGBHex } = await eyeDropper.open()
+      colorValue.value = sRGBHex
+    } else {
+      message.error('你的浏览器不支持"EyeDropper"! 请使用chrome 95版本')
+    }
+  }
+</script>
 <template>
   <section
     class="flex justify-center items-center"
@@ -23,27 +42,6 @@
     />
   </section>
 </template>
-
-<script lang="ts" setup>
-  import { ref } from 'vue'
-  import colorPicker from '~icons/gg/color-picker'
-  import { useMessage } from 'naive-ui'
-  const colorValue = ref('#66ccff')
-  const message = useMessage()
-
-  const openEyeDropper = async () => {
-    if (window.EyeDropper) {
-      const { EyeDropper } = window
-      const eyeDropper = new EyeDropper()
-
-      const { sRGBHex } = await eyeDropper.open()
-      colorValue.value = sRGBHex
-    } else {
-      message.error('你的浏览器不支持"EyeDropper"! 请使用chrome 95版本')
-    }
-  }
-</script>
-
 <style scoped>
   .color-input {
     @apply w-40 h-40;

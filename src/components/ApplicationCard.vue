@@ -1,3 +1,22 @@
+<script lang="ts" setup>
+  import useThemeSize from '@/hooks/useThemeSize'
+  import { useSettingStore } from '@/stores/setting'
+  import { useAppStore } from '@/stores/application'
+  import { computed } from 'vue'
+
+  interface IProps {
+    name: string
+  }
+  const props = defineProps<IProps>()
+
+  const store = useSettingStore()
+  const size = computed(() => {
+    return useThemeSize('app', store.size) || NaN
+  })
+
+  const { getAppInfo } = useAppStore()
+  const { vueIcon } = getAppInfo(props.name)
+</script>
 <template>
   <section
     v-size="size"
@@ -10,22 +29,3 @@
     <vueIcon :style="{ fontSize: `${size / 1.5}px` }" />
   </section>
 </template>
-<script lang="ts" setup>
-import useThemeSize from '@/hooks/useThemeSize'
-import { useSettingStore } from '@/stores/setting'
-import { useAppStore } from '@/stores/application'
-import { computed, defineProps } from 'vue'
-
-interface IProps {
-  name: string
-}
-const props = defineProps<IProps>()
-
-const store = useSettingStore()
-const size = computed(() => {
-    return useThemeSize('app', store.size) || NaN
-})
-
-const { getAppInfo } = useAppStore()
-const { vueIcon } = getAppInfo(props.name)
-</script>

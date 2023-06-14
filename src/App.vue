@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+  import EmptyLayout from '@/layout/EmptyLayout'
+  import { GlobalRightClickMenu } from '#/Once'
+  import { NMessageProvider } from 'naive-ui'
+</script>
 <template>
   <NMessageProvider>
     <GlobalRightClickMenu>
@@ -5,9 +10,3 @@
     </GlobalRightClickMenu>
   </NMessageProvider>
 </template>
-
-<script lang="ts" setup>
-  import EmptyLayout from '@/layout/EmptyLayout'
-  import { GlobalRightClickMenu } from '#/Once'
-  import { NMessageProvider } from 'naive-ui'
-</script>

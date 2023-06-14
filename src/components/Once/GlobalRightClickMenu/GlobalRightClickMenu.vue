@@ -1,18 +1,4 @@
-<template>
-  <section class="global-right-click-section" @contextmenu="onContextmenu">
-    <slot />
-    <NDropdown
-      placement="bottom-start"
-      trigger="manual"
-      :x="position.x"
-      :y="position.y"
-      :options="options"
-      :show="showDropdown"
-      :on-clickoutside="onClickoutside"
-    />
-  </section>
-</template>
-<script lang="ts" setup>
+1<script lang="ts" setup>
   import { nextTick, reactive, ref } from 'vue'
   import { NDropdown } from 'naive-ui'
 
@@ -40,10 +26,25 @@
     })
   }
 
-  const onClickoutside = () => {
+  const onClickOutside = () => {
     showDropdown.value = false
   }
 </script>
+<template>
+  <section class="global-right-click-section" @contextmenu="onContextmenu">
+    <slot />
+    <NDropdown
+      placement="bottom-start"
+      trigger="manual"
+      :x="position.x"
+      :y="position.y"
+      :options="options"
+      :show="showDropdown"
+      :on-clickoutside="onClickOutside"
+    />
+  </section>
+</template>
+
 <style scoped>
   .global-right-click-section {
     height: 100vh;

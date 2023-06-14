@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+  import { themeSizeMap } from '@/hooks/useThemeSize'
+  import { useSettingStore } from '@/stores/setting'
+  import { objectKeyValueExchange } from '@/utils/transform'
+  import { max } from 'lodash-es'
+  import { NCard, NDivider, NForm, NFormItem, NSlider } from 'naive-ui'
+  import { useI18n } from 'vue-i18n'
+
+  const marks: Record<number, ThemeSize> = objectKeyValueExchange(Object.fromEntries(themeSizeMap))
+  const store = useSettingStore()
+  const { t } = useI18n()
+</script>
 <template>
   <NForm>
     <NCard>
@@ -17,15 +29,3 @@
     </NCard>
   </NForm>
 </template>
-<script lang="ts" setup>
-  import { themeSizeMap } from '@/hooks/useThemeSize'
-  import { useSettingStore } from '@/stores/setting'
-  import { objectKeyValueExchange } from '@/utils/transform'
-  import { max } from 'lodash-es'
-  import { NCard, NDivider, NForm, NFormItem, NSlider } from 'naive-ui'
-  import { useI18n } from 'vue-i18n'
-
-  const marks: Record<number, ThememSize> = objectKeyValueExchange(Object.fromEntries(themeSizeMap))
-  const store = useSettingStore()
-  const { t } = useI18n()
-</script>

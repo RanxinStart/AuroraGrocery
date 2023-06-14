@@ -14,7 +14,7 @@ export const themeSizeMap = new Map([
   ['xl', 3]
 ])
 
-type ThememType = appName
+type ThemeType = appName
 
 /**
  *
@@ -22,7 +22,7 @@ type ThememType = appName
  * @param size
  * @returns { size }
  */
-export const useThemeSize = (type: ThememType, size: ThememSize) => {
+export const useThemeSize = (type: ThemeType, size: ThemeSize) => {
   const keySize = themeSizeMap.get(size)
   return themeNameMap.get(type)?.[keySize || 0]
 }

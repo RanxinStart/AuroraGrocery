@@ -8,8 +8,8 @@
 
   const convertValue = ref('')
   if (useSlots().default) {
-    const vnodeList = useSlots().default?.()
-    const value = vnodeList?.find(({ children }) => typeof children === 'string')
+    const vNodeList = useSlots().default?.()
+    const value = vNodeList?.find(({ children }) => typeof children === 'string')
     if (value && typeof value.children === 'string') {
       convertValue.value = value.children
     } else {
