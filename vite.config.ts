@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import Markdown from 'vite-plugin-md'
+// import Markdown from 'vite-plugin-md'
 import highlight from 'markdown-it-highlightjs'
 import WindiCSS from 'vite-plugin-windicss'
 import codeCopy from 'markdown-it-copy'
@@ -9,48 +9,51 @@ import Icon from 'unplugin-icons/vite'
 import autoprefixer from 'autoprefixer'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
-export default defineConfig({
-  base: './',
-  envDir: resolve(__dirname, 'config/envs'),
-  envPrefix: 'VITE_',
-  define: {
-    'process.env': {}
-    // 'process.env': process.env,
-  },
-  css: {
-    postcss: {
-      plugins: [autoprefixer()]
-    }
-  },
-  plugins: [
-    Vue({
-      include: [/\.vue$/, /\.md$/]
-    }),
-    Icon({
-      compiler: 'vue3',
-      autoInstall: true
-    }),
-    VueI18n({
-      include: resolve(__dirname, './src/locales/**')
-    }),
-    WindiCSS(),
-    Markdown({
-      markdownItSetup(md) {
-        md.use(highlight, {})
-        md.use(codeCopy, {
-          btnText: '复制',
-          successText: '成功~'
-        })
-      }
-    })
-  ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
-      '#': resolve(__dirname, 'src/components'),
-      '~': resolve(__dirname, 'src/assets'),
-      '!': resolve(__dirname, 'src/data')
+export default (async () => {
+  const Markdown = (await import('vite-plugin-md')).default
+  return defineConfig({
+    base: './',
+    envDir: resolve(__dirname, 'config/envs'),
+    envPrefix: 'VITE_',
+    define: {
+      'process.env': {}
+      // 'process.env': process.env,
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
-  }
-})
+    css: {
+      postcss: {
+        plugins: [autoprefixer()]
+      }
+    },
+    plugins: [
+      Vue({
+        include: [/\.vue$/, /\.md$/]
+      }),
+      Icon({
+        compiler: 'vue3',
+        autoInstall: true
+      }),
+      VueI18n({
+        include: resolve(__dirname, './src/locales/**')
+      }),
+      WindiCSS(),
+      Markdown({
+        markdownItSetup(md) {
+          md.use(highlight, {})
+          md.use(codeCopy, {
+            btnText: '复制',
+            successText: '成功~'
+          })
+        }
+      })
+    ],
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+        '#': resolve(__dirname, 'src/components'),
+        '~': resolve(__dirname, 'src/assets'),
+        '!': resolve(__dirname, 'src/data')
+      },
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
+    }
+  })
+})()
